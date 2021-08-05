@@ -1,0 +1,463 @@
+body{
+    height: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto ;
+}
+
+header, footer{
+    padding: 1em 5%;
+}
+
+h2{
+    font-size: 1.5em;
+    text-align: justify;
+    color: $clr-accent;
+    padding: 0.4em;
+
+    @media only screen and (max-width:700px){
+        text-align: center;
+    }
+}
+
+/* COMIENZO HEADER */
+header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items:center;
+    background-color: $clr-accent;
+
+    span{
+        font-size: 60px;
+        font-weight: normal;
+        color:$clr-logo;
+        margin: 10px;
+    }
+    
+    p{
+        color:$clr-dark;
+        font-size: 25px;
+        padding-bottom: 0;
+        padding-top: 0;
+        padding-left: 10px;
+        text-decoration: overline;
+
+        @media only screen and (max-width:750px){
+            text-decoration:none;
+        }
+        
+    }
+
+    .menu{
+            display: flex;
+            background-color:#bdb9b3;
+            height: auto;
+            border-radius: 5px;
+            padding: 5px 5px;
+
+        li{
+            border-right:2px solid $clr-accent;
+            padding-right: 1em;
+            list-style: none;
+        }
+
+        a{
+            color: $clr-accent;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 1.4em;
+            padding: 0.1em;
+        }
+
+        a:hover{
+            background-color:$clr-light;
+            border-radius: 5px;
+            padding: 0.1em;
+        }
+
+        a:active{
+            text-decoration: underline 3px;
+            text-underline-offset: 0.2em;
+        }
+
+        &--md{
+            display:none;
+        }
+
+        &--sm {
+            display:block;
+            padding: 0.5em;
+            cursor: pointer;
+        }
+
+
+
+        #menu-btn:checked ~ .menu--md {
+            position: absolute;
+            top: 18%;
+            right: 5%;
+            display: flex;
+            flex-flow: column;
+            align-items:flex-end;
+            gap: 1em;
+            padding: 1em;
+            animation: scale-in-ver-top 700ms both;
+
+            li{
+                border-right: none;
+                font-size: 0.7em;
+            }
+        }
+
+        @media only screen and (min-width:1024px){ 
+        
+            &--sm{
+                display:none;
+            }
+
+            &--md{
+                display:flex;
+                gap: 1em;
+            }
+        
+        }
+
+}
+}
+/* FIN HEADER */
+
+/* COMIENZO FOOTER */
+footer{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap:2em;
+    background-color:$clr-dark;
+    background-image: linear-gradient(to right, #434046, #3e3c41, #272729 );
+    width: 100%;
+    height: auto;
+
+        .logo-ft span{
+            color:$clr-logo;
+            font-size: 1em;
+        } 
+
+        .logo-ft p{
+            color:$clr-accent;
+            font-size: 1.5em;
+            text-decoration: overline;
+            word-spacing: 0.1em;
+        }
+
+        .fa-instagram{
+            color:$clr-accent;
+        }
+
+        .instagram a{
+            font-size: 1.6em;
+        }
+
+        .instagram span{
+            color:$clr-accent;
+            font-size: 1.2em;
+        }
+
+        .enlace-ft a{
+            background-color: $clr-logo;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 1.4em;
+            text-decoration: none;
+            border: solid 2px; color:$clr-dark;
+            border-radius: 7px;
+            padding: 5px;
+        }
+        
+        .enlace-ft a:hover{
+            background-color:$clr-light;
+        }
+        
+}
+
+@media only screen and (min-width:850px){
+        
+    .container-ft{
+        flex-flow: row;
+        justify-content: space-between;
+        height: 20vh;
+    }
+    
+    .logo-ft p{
+        padding-right: 2.5em;
+    }
+}
+/* FIN FOOTER */
+
+/* COMIENZO MAIN */
+main{ 
+    flex: 1;
+
+    background-color:$clr-light; 
+
+    h1{
+        color:$clr-accent;
+        font-size: 50px;
+        font-weight: normal;
+        text-align:center;
+        word-spacing: 8px;
+        padding: 30px;
+        text-decoration:overline $clr-accent;
+
+        @media only screen and (max-width:660px){
+            text-decoration:none;
+        }
+    }
+    
+    h1 span{
+        color:$clr-logo;
+        font-size: 50px;
+    }
+
+    img{
+        height:auto;
+        width: 100%;
+        object-fit:cover;
+        object-position: top center;
+        display: block;
+    }
+
+}
+/* FIN MAIN */
+
+/* COMIENZO NOSOTROS */
+.contenedor-nos{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap: 0.5em;
+    margin: 2em;
+
+    .parrafo-nos{
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0.5em;
+    padding: 0.5em;
+    flex: 1;
+    }
+
+    p{
+    font-size: 1.5em;
+    text-align:justify;
+    color: $clr-accent;
+    line-height: 1.3em;
+    padding: 0.4em;
+    }
+
+    img{
+    border-radius: 10px;
+    margin: 0.5em;
+    margin-left: 0.2em;
+    }
+
+    @media only screen and (max-width:1000px){
+        img{
+            display: none;
+        }
+
+        .contenedor-nos{
+            flex-direction:column;
+        }
+
+        p{
+            font-size: 1.3em;
+            line-height: 1.1em;
+        }
+    }
+
+    @media only screen and (max-width:630px){
+        p{
+            font-size: 1.2em;
+            line-height: 1.2em;
+            text-align: center;
+        }
+
+    }
+}
+/* FIN NOSOTROS */
+
+/* COMIENZO SERVICIOS */
+.main-serv{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .col-uno, .col-dos, .col-tres{
+        
+
+        li{
+            font-size: 1.6em;
+            color: $clr-accent;
+            padding: 0.3em;
+            border-bottom: solid 0.1px $clr-accent;
+        }
+
+        i{
+            display:block;
+            color: $clr-logo;
+            padding-top: 0.5em;
+            padding-bottom: 0.3em;
+        }
+    }
+
+        @media only screen and (min-width:760px){   
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+
+        .col-uno, .col-dos, .col-tres{
+            height: auto;
+            width: 300px;
+            padding-bottom: 1em;
+
+        li{
+            font-size: 1.8em;
+            padding: 0.2em;
+            border-bottom:none;
+        }
+        }
+    } 
+}
+/* FIN SERVICIOS */
+
+/* COMIENZO CENTROS */
+
+.centros{
+    display: flex;
+    flex-direction: column;
+
+    p{
+    font-size: 1.2em;
+    text-align:left;
+    color: $clr-accent;
+    line-height: 1.2em;
+    padding: 0.3em 1em;
+    }
+
+    span{
+        @include cen-span();
+    }
+
+    .cen-rak{
+    @include cen-container();
+    }
+
+    .cen-ark{
+    @include cen-container();
+    }
+
+    .img-cen{
+    display: none;
+    }
+
+    @media only screen and (min-width:1024px){
+        flex-direction: row;
+
+        .cen-rak, .cen-ark, .img-cen{
+            height: 340px;
+            width: 380px;
+            margin:2em;
+            padding: 1em;
+            padding-bottom: 0.3em;
+        }
+
+        p{
+            padding-top: 1em;
+            line-height: 1.2em;
+        }
+
+        .img-cen{
+            display:flex;
+
+            img{
+                border-radius: 10px;
+                margin-right: 2em;
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    @media only screen and (min-width:1380px){
+        .img-cen img{
+            margin-left: 3em;
+        }
+    }
+
+}
+/* FIN CENTROS */
+
+/* COMIENZO CONTACTO */
+.contacto{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+
+    .icon-cont{
+        @include icons-contacto();
+        text-align: center;
+
+    }
+
+    .fa{
+        font-size: 1.5em;
+        padding: 1em;
+        color:$clr-accent;
+    }
+
+    .formulario{
+        @include cont-form();
+
+        label{
+        text-align:left;
+        font-size: 1.3em;
+        color: $clr-accent;
+        }
+
+        .in{
+            @include in-contacto();
+        }
+
+        .tex{
+            @include tex-contacto();
+        }
+
+        .enviar{
+            @include enviar-btn();
+        }
+
+        .borrar{
+            @include enviar-btn();
+        }
+
+    }
+
+    @media only screen and (min-width:768px){
+        flex-direction: row;
+    }
+
+    @media only screen and (min-width:1024px){
+            .icon-cont, .formulario{
+            height: 380px;
+            width: 500px;
+            }
+        }
+
+}
+/* FIN CONTACTO */
